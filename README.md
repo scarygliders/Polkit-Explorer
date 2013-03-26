@@ -14,7 +14,13 @@ configured by default.
 
 Written in Python using the QT4 library.
 
+Running
+-------
+
 To run, simply change into the PolkitExplorer directory and type ./polkitex.py
+
+Menus
+-----
 
 Use File--->Open from the GUI to open the .policy file you wish to explore.
 
