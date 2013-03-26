@@ -43,16 +43,20 @@ http://scarygliders.net
 Files
 -----
 
-About.ui        :   Qtdesigner file for the About window
-Glossary.ui     :   QtDesigner file for the Glossary window
-PKEIconV001.png :   The program's "logo" ;)
-polkitex.py     :   The main Python program
-polkitex.ui     :   QtDesigner file for the main GUI
-Ui_*.py         :   Python code, compiled from the *.ui files using pyuic4
-                    Any changes made to the .ui QtDesigner forms need to then be
-                    compiled via pyuic4.
-                    Signal slots from the buttons to the main program are
-                    created inside QtDesigner.
+About.ui        : Qtdesigner file for the About window
+
+Glossary.ui     : QtDesigner file for the Glossary window
+
+PKEIconV001.png : The program's "logo"
+
+polkitex.py     : The main Python program
+
+polkitex.ui     : QtDesigner file for the main GUI
+
+Ui_*.py         : Python code, compiled from the *.ui files using pyuic4
+
+Any changes made to the .ui QtDesigner forms need to then be compiled via pyuic4.
+Signal slots from the buttons to the main program are created inside QtDesigner.
 
 Python will more than likely create some .pyc files after running this, it's
 normal (compiled python files).
