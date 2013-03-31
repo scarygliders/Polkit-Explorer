@@ -38,7 +38,7 @@ Help--->About brings up the About window.
 Help--->Glossary brings up a window explaining the meanings of the information
         displayed.
         
-More details at http://scarygliders.net
+More details at http://scarygliders.net/2013/03/26/polkit-explorer-v1-0-released/
 
 Tested on Debian and works. For other distributions you may have to browse to a
 different directory where that particular distribution keeps its Polkit .policy
