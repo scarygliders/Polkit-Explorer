@@ -14,6 +14,13 @@ configured by default.
 
 Written in Python using the QT4 library.
 
+Requires
+--------
+    python
+    python-qt
+    python-lxml
+    Qt libraries
+
 Running
 -------
 
@@ -32,12 +39,6 @@ Help--->Glossary brings up a window explaining the meanings of the information
         displayed.
         
 More details at http://scarygliders.net
-
-Requires;
-
-    python
-    python-qt
-    Qt libraries
 
 Tested on Debian and works. For other distributions you may have to browse to a
 different directory where that particular distribution keeps its Polkit .policy
