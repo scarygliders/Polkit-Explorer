@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2
 
 # Polkit Explorer
 # View/Explore all entries within a Linux Polkit XML file
