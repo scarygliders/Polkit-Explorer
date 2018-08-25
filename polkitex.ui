@@ -59,7 +59,7 @@
      <bool>true</bool>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Box</enum>
+     <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="text">
      <string/>
@@ -84,7 +84,7 @@
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
+     <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
@@ -109,7 +109,7 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If set to &amp;quot;yes&amp;quot; will give any user permission to perform the action as described in the Description above. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
@@ -141,7 +141,7 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&amp;quot;Inactive&amp;quot; users are ones who are not directly logged into the system's console. This includes anyone who is logged in remotely, whether it be via ssh, telnet, or even RDP.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
@@ -173,7 +173,7 @@
       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&amp;quot;Active&amp;quot; users are ones who are directly logged into a system's console, via a locally connected terminal. Users directly logged into a GUI at the system console, for example.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="frameShape">
-      <enum>QFrame::WinPanel</enum>
+      <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
@@ -299,7 +299,10 @@
      </font>
     </property>
     <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
     <property name="text">
      <string>Policy Filename</string>
@@ -366,7 +369,10 @@
      </font>
     </property>
     <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
     <property name="text">
      <string>Action</string>
@@ -415,7 +421,10 @@
      </font>
     </property>
     <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
     <property name="text">
      <string>Policy</string>
@@ -444,7 +453,10 @@
      </font>
     </property>
     <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
     <property name="text">
      <string>Info</string>
@@ -466,7 +478,7 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Displays the number of Actions within a Polkit policy file.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Panel</enum>
+     <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
@@ -489,7 +501,7 @@
      </font>
     </property>
     <property name="frameShape">
-     <enum>QFrame::WinPanel</enum>
+     <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
@@ -519,7 +531,7 @@
      <x>0</x>
      <y>0</y>
      <width>910</width>
-     <height>30</height>
+     <height>35</height>
     </rect>
    </property>
    <property name="font">
@@ -538,7 +550,7 @@
      </font>
     </property>
     <property name="title">
-     <string>File</string>
+     <string>&amp;File</string>
     </property>
     <addaction name="actionOpen"/>
     <addaction name="separator"/>
@@ -553,7 +565,7 @@
      </font>
     </property>
     <property name="title">
-     <string>Help</string>
+     <string>&amp;Help</string>
     </property>
     <addaction name="separator"/>
     <addaction name="actionAbout"/>
@@ -566,7 +578,7 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
    <property name="text">
-    <string>Open</string>
+    <string>&amp;Open</string>
    </property>
    <property name="font">
     <font>
@@ -578,7 +590,7 @@
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>About</string>
+    <string>&amp;About</string>
    </property>
    <property name="font">
     <font>
@@ -590,12 +602,12 @@
   </action>
   <action name="actionQuit">
    <property name="text">
-    <string>Quit</string>
+    <string>&amp;Quit</string>
    </property>
   </action>
   <action name="actionShow_Glossary">
    <property name="text">
-    <string>Show Glossary</string>
+    <string>&amp;Show Glossary</string>
    </property>
   </action>
  </widget>

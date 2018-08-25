@@ -12,13 +12,13 @@ permissions are granted or denied depending on if a user is logged in locally
 This utility is intended to give you an insight into how your system is
 configured by default.
 
-Written in Python using the QT4 library.
+Written in Python using the QT5 library.
 
 Requires
 --------
-    python
-    python-qt
-    python-lxml
+    python2
+    python2-qt5
+    python2-lxml
     Qt libraries
 
 Running
@@ -60,7 +60,7 @@ polkitex.py     : The main Python program
 
 polkitex.ui     : QtDesigner file for the main GUI
 
-Ui_*.py         : Python code, compiled from the *.ui files using pyuic4
+Ui_*.py         : Python code, compiled from the *.ui files using pyuic5
 
 Any changes made to the .ui QtDesigner forms need to then be compiled via pyuic4.
 Signal slots from the buttons to the main program are created inside QtDesigner.
