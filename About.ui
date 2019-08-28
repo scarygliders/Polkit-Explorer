@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>375</height>
+    <height>386</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,20 +22,23 @@
      <x>9</x>
      <y>9</y>
      <width>381</width>
-     <height>361</height>
+     <height>371</height>
     </rect>
    </property>
    <property name="frameShape">
-    <enum>QFrame::WinPanel</enum>
+    <enum>QFrame::StyledPanel</enum>
    </property>
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>10</y>
+      <y>0</y>
       <width>281</width>
       <height>41</height>
      </rect>
@@ -48,7 +51,7 @@
      </font>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Panel</enum>
+     <enum>QFrame::NoFrame</enum>
     </property>
     <property name="lineWidth">
      <number>3</number>
@@ -70,7 +73,7 @@
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Box</enum>
+     <enum>QFrame::StyledPanel</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
@@ -95,7 +98,7 @@
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>330</y>
+      <y>340</y>
       <width>87</width>
       <height>29</height>
      </rect>
@@ -107,8 +110,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>60</y>
+      <x>120</x>
+      <y>40</y>
       <width>151</width>
       <height>141</height>
      </rect>

@@ -24,7 +24,7 @@
 # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
 
-from PyQt4 import QtCore, QtGui
+from PyQt5 import QtCore, QtWidgets
 from Ui_polkitex import Ui_PolkitExplorer
 from Ui_About import Ui_About
 from Ui_Glossary import Ui_Glossary
@@ -33,7 +33,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding( "utf-8" )
 
-class PolkitExplorer(QtGui.QMainWindow, Ui_PolkitExplorer):
+class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
     def __init__(self, parent=None):
        super(PolkitExplorer, self).__init__(parent)
        self.setupUi(self)
@@ -46,7 +46,7 @@ class PolkitExplorer(QtGui.QMainWindow, Ui_PolkitExplorer):
 
     # User wants to quit...
     def fileQuit(self):
-        QtGui.qApp.quit()
+        QtWidgets.qApp.quit()
 
     # Event fires when comboBox changes (scrollwheel or click'n'select)
     def actionComboBoxChanged(self):
@@ -64,7 +64,7 @@ class PolkitExplorer(QtGui.QMainWindow, Ui_PolkitExplorer):
     # Display file open dialog at the correct dir and with a filename filter for the policy files
     # then fill the Actions Combobox
     def openActionFileDialog(self):
-        fname = QtGui.QFileDialog.getOpenFileName(self, 'Open Polkit file...', '/usr/share/polkit-1/actions/', '*.policy')
+        fname, _filter = QtWidgets.QFileDialog.getOpenFileName(self, 'Open Polkit file...', '/usr/share/polkit-1/actions/', '*.policy')
         if fname != "":
             self.parsePolKitFile(str(fname))
 
@@ -139,18 +139,18 @@ class PolkitExplorer(QtGui.QMainWindow, Ui_PolkitExplorer):
         if self.actSet == 0:
             self.currentAllowActiveLabel.setText("")
 
-class aboutPolkitExplorer(QtGui.QDialog, Ui_About):
+class aboutPolkitExplorer(QtWidgets.QDialog, Ui_About):
     def __init__(self, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+        QtWidgets.QDialog.__init__(self, parent)
         self.aboutDialog = Ui_About()
         self.setupUi(self)
 
     def aboutClose(self):
         self.close()
 
-class glossaryPolkitExplorer(QtGui.QDialog, Ui_Glossary):
+class glossaryPolkitExplorer(QtWidgets.QDialog, Ui_Glossary):
     def __init__(self, parent=None):
-        QtGui.QDialog.__init__(self,parent)
+        QtWidgets.QDialog.__init__(self,parent)
         self.glossaryDialog = Ui_Glossary()
         self.setupUi(self)
 
@@ -160,7 +160,7 @@ class glossaryPolkitExplorer(QtGui.QDialog, Ui_Glossary):
 
 if __name__ == '__main__':
     import sys
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     window = PolkitExplorer()
     window.show()
     sys.exit(app.exec_())
