@@ -1,4 +1,4 @@
-#! /usr/bin/python2
+#! /usr/bin/env python3
 
 # Polkit Explorer
 # View/Explore all entries within a Linux Polkit XML file
@@ -29,15 +29,15 @@ from Ui_polkitex import Ui_PolkitExplorer
 from Ui_About import Ui_About
 from Ui_Glossary import Ui_Glossary
 from lxml import etree as ET
+from importlib import reload
 import sys
 reload(sys)
-sys.setdefaultencoding( "utf-8" )
 
 class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
     def __init__(self, parent=None):
        super(PolkitExplorer, self).__init__(parent)
        self.setupUi(self)
-    
+
     @QtCore.pyqtSlot()
 
     # User wants to open a file...
@@ -68,7 +68,7 @@ class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
         if fname != "":
             self.parsePolKitFile(str(fname))
 
-    # fill Actions ComboBox with list of all actions for specified Policy File. 
+    # fill Actions ComboBox with list of all actions for specified Policy File.
     def parsePolKitFile(self, fname):
 
         # Display the filename of the policy kit file
@@ -85,10 +85,10 @@ class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
         #fill the Actions combo box list with all actions from the loaded polkit file...
         for actionslist in self.root.iter('action'):
             actname = actionslist.get('id')
-            self.actionComboBox.addItem(unicode(actname))
+            self.actionComboBox.addItem(str(actname))
             self.actionsCount = self.actionsCount + 1
             self.actionsCounterDisplay.display(self.actionsCount)
-    
+
     def parseAction(self, actionID):
         description = None
         for actionslist in self.root.iter('action'):
@@ -104,7 +104,7 @@ class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
                 # Get the desired Description of the Action...
                 # Note: It's a complete PITA... some .policy XML files just have Descriptions with
                 #       no xml:lang attributes, and some have, and one file has a Description element
-                #       tag of "_description"! Yep, a complete PITA, all right... 
+                #       tag of "_description"! Yep, a complete PITA, all right...
                 for d in self.root.xpath('.//action[@id = $policy]/description[@xml:lang = $lang]', policy=policy, lang="en_GB"):
                     description = d.text
                 if description is not None:
