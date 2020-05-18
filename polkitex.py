@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 
 # Polkit Explorer
 # View/Explore all entries within a Linux Polkit XML file
@@ -29,7 +29,7 @@ from Ui_polkitex import Ui_PolkitExplorer
 from Ui_About import Ui_About
 from Ui_Glossary import Ui_Glossary
 from lxml import etree as ET
-from importlib import reload
+from imp import reload
 import sys
 reload(sys)
 
