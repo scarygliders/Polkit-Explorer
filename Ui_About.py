@@ -1,65 +1,93 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'About.ui'
-#
-# Created: Tue Mar 26 14:49:52 2013
-#      by: PyQt4 UI code generator 4.9.3
-#
-# WARNING! All changes made in this file will be lost!
+################################################################################
+## Form generated from reading UI file 'About.ui'
+##
+## Created by: Qt User Interface Compiler version 6.8.0
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
-from PyQt5 import QtCore, QtGui, QtWidgets
-
-try:
-    _fromUtf8 = QtCore.QString.fromUtf8
-except AttributeError:
-    _fromUtf8 = lambda s: s
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QPushButton,
+    QSizePolicy, QWidget)
 
 class Ui_About(object):
     def setupUi(self, About):
-        About.setObjectName(_fromUtf8("About"))
-        About.setWindowModality(QtCore.Qt.NonModal)
-        About.resize(400, 375)
-        self.frame = QtWidgets.QFrame(About)
-        self.frame.setGeometry(QtCore.QRect(9, 9, 381, 361))
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName(_fromUtf8("frame"))
-        self.label = QtWidgets.QLabel(self.frame)
-        self.label.setGeometry(QtCore.QRect(40, 10, 281, 41))
-        font = QtGui.QFont()
+        if not About.objectName():
+            About.setObjectName(u"About")
+        About.setWindowModality(Qt.WindowModality.NonModal)
+        About.resize(400, 386)
+        self.frame = QFrame(About)
+        self.frame.setObjectName(u"frame")
+        self.frame.setGeometry(QRect(9, 9, 381, 371))
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.frame.setLineWidth(1)
+        self.label = QLabel(self.frame)
+        self.label.setObjectName(u"label")
+        self.label.setGeometry(QRect(40, 0, 281, 41))
+        font = QFont()
         font.setPointSize(12)
         font.setBold(True)
-        font.setWeight(75)
         self.label.setFont(font)
-        self.label.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.label.setFrameShape(QFrame.Shape.NoFrame)
         self.label.setLineWidth(3)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName(_fromUtf8("label"))
-        self.label_2 = QtWidgets.QLabel(self.frame)
-        self.label_2.setGeometry(QtCore.QRect(10, 180, 361, 151))
-        self.label_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.label_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.label_2.setTextFormat(QtCore.Qt.RichText)
-        self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.label_2 = QLabel(self.frame)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(10, 260, 361, 71))
+        self.label_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.label_2.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_2.setTextFormat(Qt.TextFormat.RichText)
+        self.label_2.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
         self.label_2.setWordWrap(True)
-        self.label_2.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
-        self.label_2.setObjectName(_fromUtf8("label_2"))
-        self.closeAboutButton = QtWidgets.QPushButton(self.frame)
-        self.closeAboutButton.setGeometry(QtCore.QRect(150, 330, 87, 29))
-        self.closeAboutButton.setObjectName(_fromUtf8("closeAboutButton"))
-        self.label_3 = QtWidgets.QLabel(self.frame)
-        self.label_3.setGeometry(QtCore.QRect(130, 60, 151, 141))
-        self.label_3.setText(_fromUtf8(""))
-        self.label_3.setPixmap(QtGui.QPixmap(_fromUtf8("PKEIconV001.png")))
-        self.label_3.setObjectName(_fromUtf8("label_3"))
+        self.label_2.setTextInteractionFlags(Qt.TextInteractionFlag.NoTextInteraction)
+        self.closeAboutButton = QPushButton(self.frame)
+        self.closeAboutButton.setObjectName(u"closeAboutButton")
+        self.closeAboutButton.setGeometry(QRect(150, 340, 87, 29))
+        self.label_3 = QLabel(self.frame)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(120, 40, 151, 141))
+        self.label_3.setPixmap(QPixmap(u"PKEIconV001.png"))
+        self.label_4 = QLabel(self.frame)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(10, 180, 361, 31))
+        self.label_4.setFrameShape(QFrame.Shape.StyledPanel)
+        self.label_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.label_4.setTextFormat(Qt.TextFormat.RichText)
+        self.label_4.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
+        self.label_4.setWordWrap(True)
+        self.label_4.setTextInteractionFlags(Qt.TextInteractionFlag.NoTextInteraction)
+        self.versionlabel = QLabel(self.frame)
+        self.versionlabel.setObjectName(u"versionlabel")
+        self.versionlabel.setGeometry(QRect(10, 219, 361, 31))
+        self.versionlabel.setFrameShape(QFrame.Shape.StyledPanel)
+        self.versionlabel.setFrameShadow(QFrame.Shadow.Raised)
+        self.versionlabel.setTextFormat(Qt.TextFormat.RichText)
+        self.versionlabel.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
+        self.versionlabel.setWordWrap(True)
+        self.versionlabel.setTextInteractionFlags(Qt.TextInteractionFlag.NoTextInteraction)
 
         self.retranslateUi(About)
         self.closeAboutButton.clicked.connect(About.aboutClose)
-        QtCore.QMetaObject.connectSlotsByName(About)
+
+        QMetaObject.connectSlotsByName(About)
+    # setupUi
 
     def retranslateUi(self, About):
-        About.setWindowTitle(QtWidgets.QApplication.translate("About", "About Polkit Explorer", None))
-        self.label.setText(QtWidgets.QApplication.translate("About", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Polkit Explorer</span></p></body></html>", None))
-        self.label_2.setText(QtWidgets.QApplication.translate("About", "<html><head/><body><p><span style=\" font-size:11pt; font-weight:600;\">Author : Kevin Cave.</span></p><p><span style=\" font-size:11pt; font-weight:600;\">Version : 1.0</span></p><p><span style=\" font-size:11pt; font-weight:600;\">Allows a user to load polkit-1 .policy files and explore their contents in a human-readable format.</span></p></body></html>", None))
-        self.closeAboutButton.setText(QtWidgets.QApplication.translate("About", "Close", None))
+        About.setWindowTitle(QCoreApplication.translate("About", u"About Polkit Explorer", None))
+        self.label.setText(QCoreApplication.translate("About", u"<html><head/><body><p align=\"center\"><span style=\" font-size:14pt;\">Polkit Explorer</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("About", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:600;\">Allows a user to load polkit-1 .policy files and explore their contents in a human-readable format.</span></p></body></html>", None))
+        self.closeAboutButton.setText(QCoreApplication.translate("About", u"Close", None))
+        self.label_3.setText("")
+        self.label_4.setText(QCoreApplication.translate("About", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:700;\">Copyright (c) Kevin Cave 2013-onwards</span></p></body></html>", None))
+        self.versionlabel.setText(QCoreApplication.translate("About", u"<html><head/><body><p><span style=\" font-size:11pt; font-weight:700;\">Version :</span></p></body></html>", None))
+    # retranslateUi
 
