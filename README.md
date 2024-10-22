@@ -16,15 +16,24 @@ Written in Python using the QT5 library.
 
 Requires
 --------
-    python2
-    python2-qt5
-    python2-lxml
-    Qt libraries
+    python3 (tested on python 3.12)
+    pyside6
+    python-lxml
+    Qt libraries (whatever PySide6 needs)
 
 Running
 -------
 
-To run, simply change into the PolkitExplorer directory and type ./polkitex.py
+To run:
+0) Ensure your Python environment is set up. Tested on 3.12. Either use a virtualenv with pyside6 installed, or
+   install the native python packages on your system. Your virtualenv should have pyside6 and python-lxml installed.
+1) ensure the Ui_*.py files exist. If not, first run the compile_forms.sh shell script which will create them.
+2) type ./polkitex.py (or python polkitex.py)
+
+Polkit Explorer should now display the main window. Click on File-->Open and select a policy file, after which you
+will be able to view the policies configured for that particular file using the drop-down menu.
+
+
 
 Menus
 -----
@@ -40,12 +49,12 @@ Help--->Glossary brings up a window explaining the meanings of the information
         
 More details at http://scarygliders.net/2013/03/26/polkit-explorer-v1-0-released/
 
-Tested on Debian and works. For other distributions you may have to browse to a
+Tested on Debian, Arch Linux, and works. For other distributions you may have to browse to a
 different directory where that particular distribution keeps its Polkit .policy
 files.
 
-Send patches, bug reports either to the GitHub repository and/or my website at
-http://scarygliders.net 
+Send patches, bug reports either to the GitHub repository.
+My much-neglected website is at: http://scarygliders.net 
 
 Files
 -----
@@ -60,18 +69,18 @@ polkitex.py     : The main Python program
 
 polkitex.ui     : QtDesigner file for the main GUI
 
-Ui_*.py         : Python code, compiled from the *.ui files using pyuic5
+Ui_*.py         : Python code, compiled from the *.ui files using pyside6-uic
 
-Any changes made to the .ui QtDesigner forms need to then be compiled via pyuic4.
+Any changes made to the .ui QtDesigner forms need to then be compiled via pyside6-uic.
+A shell script called compile_forms.sh is provided for your convenience. Run that
+first before trying to run the application.
+
 Signal slots from the buttons to the main program are created inside QtDesigner.
 
 Python will more than likely create some .pyc files after running this, it's
 normal (compiled python files).
 
 I hope this proves useful to someone.
-
-I intend to create a spin-off utility which will enable the creation/editing of
-policies, at a later date.
 
 Enjoy ;)
 
