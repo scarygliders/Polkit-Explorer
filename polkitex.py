@@ -3,12 +3,9 @@
 # Polkit Explorer
 # View/Explore all entries within a Linux Polkit XML file
 #
-# v1.0
+# Original release date : 20130324 (yyyymmdd)
 #
-# Release date : 20130324
-#                yyyymmdd
-#
-# Copyright (C) 2013, Kevin Cave <kevin@scarygliders.net>
+# Copyright (C) 2013-2024, Kevin Cave <kevin@scarygliders.net>
 #
 # ISC License (ISC)
 #
@@ -24,29 +21,31 @@
 # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
 
-from PyQt5 import QtCore, QtWidgets
+from PySide6 import QtCore, QtWidgets
 from Ui_polkitex import Ui_PolkitExplorer
 from Ui_About import Ui_About
 from Ui_Glossary import Ui_Glossary
-from lxml import etree as ET
-from imp import reload
+from lxml import etree
+from importlib import reload
 import sys
 reload(sys)
 
+VERSION = 1.1
+
+
 class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
     def __init__(self, parent=None):
-       super(PolkitExplorer, self).__init__(parent)
-       self.setupUi(self)
+        super(PolkitExplorer, self).__init__(parent)
+        self.setupUi(self)
 
-    @QtCore.pyqtSlot()
-
+    @QtCore.Slot()
     # User wants to open a file...
     def fileOpen(self):
-        self.openActionFileDialog()
+        self.open_action_file_dialog()
 
     # User wants to quit...
     def fileQuit(self):
-        QtWidgets.qApp.quit()
+        app.quit()
 
     # Event fires when comboBox changes (scrollwheel or click'n'select)
     def actionComboBoxChanged(self):
@@ -55,15 +54,16 @@ class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
 
     def fileAbout(self):
         self.aboutDialog = aboutPolkitExplorer()
-        self.aboutDialog.exec_()
+        self.aboutDialog.versionlabel.setText("Version : " + str(VERSION))
+        self.aboutDialog.exec()
 
     def helpGlossary(self):
         self.glossaryDialog = glossaryPolkitExplorer()
-        self.glossaryDialog.exec_()
+        self.glossaryDialog.exec()
 
     # Display file open dialog at the correct dir and with a filename filter for the policy files
     # then fill the Actions Combobox
-    def openActionFileDialog(self):
+    def open_action_file_dialog(self):
         fname, _filter = QtWidgets.QFileDialog.getOpenFileName(self, 'Open Polkit file...', '/usr/share/polkit-1/actions/', '*.policy')
         if fname != "":
             self.parsePolKitFile(str(fname))
@@ -75,14 +75,14 @@ class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
         self.policyKitFileName.setText(fname)
 
         #Read the selected file and create the lxml tree object...
-        parser = ET.XMLParser(encoding='utf-8')
-        self.tree = ET.parse(fname, parser)
+        parser = etree.XMLParser(encoding='utf-8')
+        self.tree = etree.parse(fname, parser)
         self.root = self.tree.getroot()
 
         self.actionComboBox.clear()
         self.actionsCount = 0
 
-        #fill the Actions combo box list with all actions from the loaded polkit file...
+        # Fill the Actions combo box list with all actions from the loaded polkit file...
         for actionslist in self.root.iter('action'):
             actname = actionslist.get('id')
             self.actionComboBox.addItem(str(actname))
@@ -131,7 +131,7 @@ class PolkitExplorer(QtWidgets.QMainWindow, Ui_PolkitExplorer):
             self.inSet = 1
         elif defaultTag == "allow_active":
             self.currentAllowActiveLabel.setText(defaultText)
-            self.actSet =1
+            self.actSet = 1
         if self.anySet == 0:
             self.currentAllowAnyLabel.setText("")
         if self.inSet == 0:
@@ -148,6 +148,7 @@ class aboutPolkitExplorer(QtWidgets.QDialog, Ui_About):
     def aboutClose(self):
         self.close()
 
+
 class glossaryPolkitExplorer(QtWidgets.QDialog, Ui_Glossary):
     def __init__(self, parent=None):
         QtWidgets.QDialog.__init__(self,parent)
@@ -163,4 +164,4 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = PolkitExplorer()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
